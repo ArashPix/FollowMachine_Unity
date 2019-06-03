@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2EAAE442-AE5A-45B6-AC4A-3CA0ABFBAF3C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FollowMachineEditor</RootNamespace>
+    <AssemblyName>FollowMachineEditor</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MgsCommonLib, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MgsCommonLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\Charsoo\Assets\Scripts\JsonDotNet\Assemblies\Standalone\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEditor">
+      <HintPath>..\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\UnityEngine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BindEditor\BindEditorGateway.cs" />
+    <Compile Include="BindEditor\Internal\BindEditorUtility.cs" />
+    <Compile Include="BindEditor\Internal\BindWindow.cs" />
+    <Compile Include="BindEditor\Internal\ConstValueGUI.cs" />
+    <Compile Include="CordianationSystem.cs" />
+    <Compile Include="CreationMenu.cs" />
+    <Compile Include="CustomInspectors\GUIUtil.cs" />
+    <Compile Include="EditorObjectMapper\EditorObjectMapper.cs" />
+    <Compile Include="EditorObjects\EditorGraph\EFollowMachine.cs" />
+    <Compile Include="EditorObjects\EditorGraph\EGraph.cs" />
+    <Compile Include="EditorObjects\EditorShapes\EditorBoxShapes\EditorNodes\EActionNode.cs" />
+    <Compile Include="EditorObjects\EditorShapes\EditorBoxShapes\EditorNodes\EAnimationNode.cs" />
+    <Compile Include="EditorObjects\EditorShapes\EditorBoxShapes\EditorNodes\EDialogeNode.cs" />
+    <Compile Include="EditorObjects\EditorShapes\EditorBoxShapes\EditorNodes\EDynamicActionNode.cs" />
+    <Compile Include="EditorObjects\EditorShapes\EditorBoxShapes\EditorNodes\EEntryPointNode.cs" />
+    <Compile Include="EditorObjects\EditorShapes\EditorBoxShapes\EditorNodes\EEventNode.cs" />
+    <Compile Include="EditorObjects\EditorShapes\EditorBoxShapes\EditorNodes\EFollowMachineNode.cs" />
+    <Compile Include="EditorObjects\EditorShapes\EditorBoxShapes\EditorNodes\EInputNode.cs" />
+    <Compile Include="EditorObjects\EditorShapes\EditorBoxShapes\EditorNodes\ENullNode.cs" />
+    <Compile Include="EditorObjects\EditorShapes\EditorBoxShapes\EditorNodes\EOutputNode.cs" />
+    <Compile Include="EditorObjects\EditorShapes\EditorBoxShapes\EditorNodes\EProgressNode.cs" />
+    <Compile Include="EditorObjects\EditorShapes\EditorBoxShapes\EditorNodes\EServerNode.cs" />
+    <Compile Include="EditorObjects\EditorShapes\EditorBoxShapes\EditorNodes\ESetProperty.cs" />
+    <Compile Include="EditorObjects\EditorShapes\EditorBoxShapes\EditorNodes\EWindowNode.cs" />
+    <Compile Include="Server\ServerDataCustomInspector.cs" />
+    <Compile Include="DropNode.cs" />
+    <Compile Include="EdgeEditor.cs" />
+    <Compile Include="FMCanvas.cs" />
+    <Compile Include="FMWindow.cs" />
+    <Compile Include="FMWindowBase.cs" />
+    <Compile Include="Server\ServerEditor.cs" />
+    <Compile Include="EditorObjects\EditorShapes\EditorBoxShapes\EBoxShape.cs" />
+    <Compile Include="EditorObjects\EditorShapes\EditorBoxShapes\EditorNodes\ENode.cs" />
+    <Compile Include="EditorObjects\EditorShapes\EditorBoxShapes\EditorSockets\EInputSocket.cs" />
+    <Compile Include="EditorObjects\EditorShapes\EditorBoxShapes\EditorSockets\EOutputSocket.cs" />
+    <Compile Include="EditorObjects\EditorShapes\EditorBoxShapes\EditorSockets\ESocket.cs" />
+    <Compile Include="EditorObjects\EditorShapes\EEdge.cs" />
+    <Compile Include="EditorObjects\EditorShapes\EditorBoxShapes\EGroup.cs" />
+    <Compile Include="EditorObjects\EditorShapes\EShape.cs" />
+    <Compile Include="ShapeRepository.cs" />
+    <Compile Include="Utility\ColapseToFollowMachine.cs" />
+    <Compile Include="Utility\LayoutGraph.cs" />
+    <Compile Include="Windows\EntryPoints\EntryPointsWindow.cs" />
+    <Compile Include="Windows\FollowMachineExplorer\FollowMachineTreeView.cs" />
+    <Compile Include="Windows\FollowMachineExplorer\FollowMachineTreeViewWindow.cs" />
+    <Compile Include="Windows\FollowMachineInspector\FollowMachineInspector.cs" />
+    <Compile Include="GraphStack.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SettingController.cs" />
+    <Compile Include="ShapeBehaviours\BoxSelection.cs" />
+    <Compile Include="ShapeBehaviours\EventProcessor.cs" />
+    <Compile Include="Utility\EditorToolsImplimantation.cs" />
+    <Compile Include="Utility\EditorZoomArea.cs" />
+    <Compile Include="Utility\GridBackground.cs" />
+    <Compile Include="Windows\WindowExplorer\WindowTreeView.cs" />
+    <Compile Include="Windows\WindowExplorer\WindowExplorer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FollowMachineDll\FollowMachine.csproj">
+      <Project>{1cb9f484-3464-4de5-b9d4-1f6db446a1be}</Project>
+      <Name>FollowMachine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>"$(SolutionDir)pdb2mdb.exe" "$(TargetPath)"
+
+
+copy "$(TargetPath)" "$(SolutionDir)..\..\UnityIntegration\FollowMachine_UnityIntegration\Assets\FMachine\Editor"
+copy "$(TargetPath).mdb" "$(SolutionDir)..\..\UnityIntegration\FollowMachine_UnityIntegration\Assets\FMachine\Editor"</PostBuildEvent>
+  </PropertyGroup>
+</Project>
